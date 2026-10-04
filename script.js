@@ -1,7 +1,7 @@
 const products = [
-  {id:"ps5slim",cat:"Consoles",icon:"🎮",name:"PlayStation®5 Slim Digital 825GB – Pacote ASTRO BOT e Gran Turismo 7",price:"Consultar preço",old:"",store:"Amazon",discount:"",affiliateUrl:"https://amzn.to/4yydDdW",mercadoLivreUrl:"https://meli.la/1Tw6LEQ",magaluUrl:"https://www.magazinevoce.com.br/magazinetechcompare/console-playstation-5-edicao-digital-825gb-astro-bot-4-e-gran-turismo-7-sony/p/ac70gdd6je/ga/gap5/?seller_id=oficialamericanas"},
-  {id:"ryzen5500",cat:"Processadores",icon:"⚙️",name:"Processador AMD Ryzen 5 5500 100100000457BOX, Cerâmica Cinza",price:"Consultar preço",old:"",store:"Amazon",discount:"",affiliateUrl:"https://amzn.to/4yARBqU",mercadoLivreUrl:"https://meli.la/19ZA9DC",magaluUrl:"https://www.magazinevoce.com.br/magazinetechcompare/processador-amd-ryzen-5-5500-3-6ghz-4-2ghz-max-turbo-socket-am4-cache-19mb-ddr4-sem-video-integrado-100-100000457box/p/bhhf5c0758/in/prsd/?seller_id=kometa"},
-  {id:"galaxya17",cat:"Celulares",icon:"📱",name:'Celular Samsung Galaxy A17, 128GB, 4GB, 50MP, Tela 6.7", IP54 - Preto',price:"Consultar preço",old:"",store:"Amazon",discount:"",affiliateUrl:"https://amzn.to/4hLEV9r",mercadoLivreUrl:"https://meli.la/1EWbDLP",magaluUrl:"https://www.magazinevoce.com.br/magazinetechcompare/smartphone-samsung-galaxy-a17-128gb-4gb-ram-preto/p/cd4575cad1/te/ga17/?seller_id=temdetudo1001"},
+  {id:"ps5slim",cat:"Consoles",icon:"🎮",name:"PlayStation®5 Slim Digital 825GB – Pacote ASTRO BOT e Gran Turismo 7",price:"R$ 4.369,00",old:"R$ 4.599,00",store:"Mercado Livre",discount:"-5%",image:"https://horizonplay.fbitsstatic.net/img/p/sony-console-playstation-5-digital-slim-825gb-astrobot-e-gran-turismo-7-cfi-2115-branco-233951/430748.jpg?h=670&v=202608250244&w=670",priceNote:"Preço de referência consultado hoje. Pode mudar na loja.",affiliateUrl:"https://amzn.to/4yydDdW",mercadoLivreUrl:"https://meli.la/1Tw6LEQ",magaluUrl:"https://www.magazinevoce.com.br/magazinetechcompare/console-playstation-5-edicao-digital-825gb-astro-bot-4-e-gran-turismo-7-sony/p/ac70gdd6je/ga/gap5/?seller_id=oficialamericanas"},
+  {id:"ryzen5500",cat:"Processadores",icon:"⚙️",name:"Processador AMD Ryzen 5 5500 100100000457BOX, Cerâmica Cinza",price:"R$ 539,99",old:"R$ 1.176,46",store:"Pichau",discount:"-54%",image:"https://media.pichau.com.br/media/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/1/0/100-100000457box1.jpg",priceNote:"Preço de referência consultado hoje. Pode mudar na loja.",affiliateUrl:"https://amzn.to/4yARBqU",mercadoLivreUrl:"https://meli.la/19ZA9DC",magaluUrl:"https://www.magazinevoce.com.br/magazinetechcompare/processador-amd-ryzen-5-5500-3-6ghz-4-2ghz-max-turbo-socket-am4-cache-19mb-ddr4-sem-video-integrado-100-100000457box/p/bhhf5c0758/in/prsd/?seller_id=kometa"},
+  {id:"galaxya17",cat:"Celulares",icon:"📱",name:'Celular Samsung Galaxy A17, 128GB, 4GB, 50MP, Tela 6.7", IP54 - Preto',price:"R$ 1.071,00",old:"R$ 1.999,00",store:"Mercado Livre",discount:"-46%",image:"https://samsungbrshop.vtexassets.com/arquivos/ids/266142-800-auto?v=638926099724000000",priceNote:"Preço de referência consultado hoje. Pode mudar na loja.",affiliateUrl:"https://amzn.to/4hLEV9r",mercadoLivreUrl:"https://meli.la/1EWbDLP",magaluUrl:"https://www.magazinevoce.com.br/magazinetechcompare/smartphone-samsung-galaxy-a17-128gb-4gb-ram-preto/p/cd4575cad1/te/ga17/?seller_id=temdetudo1001"},
   {id:"s24u",cat:"Celulares",icon:"📱",name:"Samsung Galaxy S24 Ultra 256GB",price:"R$ 5.299,00",old:"R$ 6.499,00",store:"Oferta a configurar",discount:"-18%",affiliateUrl:""},
   {id:"aspire5",cat:"Notebooks",icon:"💻",name:"Acer Aspire 5 Ryzen 5 | 8GB | 512GB SSD",price:"R$ 2.199,00",old:"R$ 2.699,00",store:"Oferta a configurar",discount:"-18%",affiliateUrl:""},
   {id:"rtx4060",cat:"Placas de Vídeo",icon:"🎮",name:"RTX 4060 8GB GDDR6",price:"R$ 2.299,00",old:"R$ 2.599,00",store:"Oferta a configurar",discount:"-12%",affiliateUrl:""},
@@ -40,12 +40,12 @@ function render(items=products){
     <article class="product">
       <div class="product-img"><span class="discount">${p.discount}</span>
         <button class="heart" onclick="toggleCompare('${p.id}')" title="Adicionar à comparação">${selected.has(p.id)?"✓":"＋"}</button>
-        <span>${p.icon}</span>
+        ${p.image ? '<img src="'+p.image+'" alt="'+p.name+'" loading="lazy">' : '<span class="product-placeholder">'+p.icon+'</span>'}
       </div>
       <div class="product-body">
         <small>${p.cat}</small><h3>${p.name}</h3>
         <div><span class="price">${p.price}</span><span class="old">${p.old}</span></div>
-        <div class="store">${p.store}</div>
+        <div class="store">${p.store}</div><small class="price-note">${p.priceNote||"Preço de referência. Consulte a oferta antes de comprar."}</small>
         <button class="details-btn" onclick="showProductDetails('${p.id}')">Ver informações →</button>${storeButtons(p)}
       </div>
     </article>`).join("");
