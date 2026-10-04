@@ -13,3 +13,14 @@
 .details-box li{padding:12px 14px;background:#f8f7fc;border-radius:12px}
 .details-btn{width:100%;margin:10px 0;border:1px solid #7057ff;background:#f7f5ff;color:#5d43df;padding:11px 14px;border-radius:10px;font-weight:700;cursor:pointer}
 @media(max-width:700px){.details-box ul{grid-template-columns:1fr}.details-top{align-items:flex-start}.details-icon{width:72px;height:72px;font-size:42px}}
+
+
+/* Comparação */
+.comparison-section{padding-top:10px}
+.comparison-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.compare-card{background:#f8f7fc;border:1px solid #e9e7f5;border-radius:18px;padding:22px}
+.compare-card h4{margin:10px 0 8px;font-size:17px;line-height:1.35}
+.compare-card span{display:block;color:#777;font-size:13px;margin-bottom:12px}
+.compare-card strong{display:block;font-size:20px;margin-bottom:14px}
+.compare-icon{font-size:42px}
+@media(max-width:800px){.comparison-grid{grid-template-columns:1fr}}
