@@ -4,6 +4,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 CFG = ROOT / "data" / "affiliate_links.json"
 OUT = ROOT / "data" / "products.json"
+AMAZON_CACHE = ROOT / "data" / "amazon_prices.json"
 
 def http_json(url):
     req = urllib.request.Request(url, headers={"User-Agent": "TechCompareCatalogBot/1.0"})
@@ -22,15 +23,26 @@ def search_meli(query):
     items = data.get("results", [])
     if not items:
         return None
-    # Prefer a listing with a concrete price and available stock.
     for item in items:
         if item.get("price") and item.get("available_quantity", 0) != 0:
             return item
     return items[0]
 
+def load_amazon_prices():
+    if not AMAZON_CACHE.exists():
+        return {}
+    try:
+        data = json.loads(AMAZON_CACHE.read_text(encoding="utf-8"))
+        return data if isinstance(data, dict) else {}
+    except Exception as exc:
+        print("Amazon cache could not be read:", exc)
+        return {}
+
 def main():
     cfg = json.loads(CFG.read_text(encoding="utf-8"))
+    amazon = load_amazon_prices()
     products = []
+
     for row in cfg:
         item = None
         try:
@@ -38,8 +50,9 @@ def main():
         except Exception as exc:
             print("Mercado Livre search failed:", row["query"], exc)
 
+        # Keep the catalog entry even if Mercado Livre temporarily fails.
         if not item:
-            continue
+            item = {}
 
         price = item.get("price")
         title = item.get("title") or row["query"]
@@ -48,29 +61,34 @@ def main():
             thumbnail = thumbnail.replace("http://", "https://", 1)
 
         links = row.get("affiliate", {})
-        stores = {}
-        if links.get("mercadolivre"):
-            stores["mercadolivre"] = money(price)
+        amazon_row = amazon.get(row["id"], {})
+        amazon_price = amazon_row.get("price", "Não consultado")
+        if not amazon_price:
+            amazon_price = "Não consultado"
+
+        ml_price = money(price) if price is not None else "Preço não consultado"
+        primary_price = ml_price if price is not None else amazon_price
 
         products.append({
             "id": row["id"],
             "cat": row["category"],
             "icon": row.get("icon", "🛒"),
             "name": title,
-            "price": money(price),
+            "price": primary_price,
             "old": "",
-            "store": "Mercado Livre",
+            "store": "Mercado Livre" if price is not None else "Amazon" if amazon_price != "Não consultado" else "Oferta",
             "discount": "",
-            "image": thumbnail or "",
+            "image": thumbnail or amazon_row.get("image", ""),
             "priceNote": "Preço atualizado automaticamente. Pode mudar conforme estoque, promoção, pagamento e região.",
             "storePrices": {
-                "amazon": "Consulte a oferta",
-                "mercadolivre": money(price),
+                "amazon": amazon_price,
+                "mercadolivre": ml_price,
                 "magalu": "Consulte a oferta"
             },
             "affiliateUrl": links.get("amazon", ""),
             "mercadoLivreUrl": links.get("mercadolivre", ""),
             "magaluUrl": links.get("magalu", ""),
+            "amazonProductId": amazon_row.get("productId", ""),
             "sourceItemId": item.get("id"),
             "updatedAt": __import__("datetime").datetime.utcnow().isoformat() + "Z"
         })
