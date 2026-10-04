@@ -82,7 +82,7 @@ function toggleCompare(id){
   if(selected.has(id)) selected.delete(id);
   else if(selected.size<3) selected.add(id);
   else {toast("Você pode comparar no máximo 3 produtos.");return;}
-  render();
+  render(products.slice(0,3));
 }
 function updateCompareCount(){
   const el=document.getElementById("compareCount");
