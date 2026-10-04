@@ -28,7 +28,7 @@
     window.buyProduct=function(id,store="amazon"){
       const p=automatic.find(x=>x.id===id);
       if(!p){toast("Produto não encontrado.");return;}
-      const url=store==="mercadolivre"?p.mercadoLivreUrl:store==="magalu"?p.magaluUrl:p.affiliateUrl;
+      const url=store==="mercadolivre"?p.mercadoLivreUrl:store==="magalu"?p.magaluUrl:store==="kabum"?p.kabumUrl:p.affiliateUrl;
       if(url)window.open(url,"_blank","noopener");
       else toast("Link de afiliado ainda não configurado.");
     };
@@ -42,7 +42,8 @@
       const rows=[
         ["Amazon",sp.amazon,p.affiliateUrl,"amazon"],
         ["Mercado Livre",sp.mercadolivre,p.mercadoLivreUrl,"mercadolivre"],
-        ["Magalu",sp.magalu,p.magaluUrl,"magalu"]
+        ["Magalu",sp.magalu,p.magaluUrl,"magalu"],
+        ["KaBuM",sp.kabum,p.kabumUrl,"kabum"]
       ];
       const priceTable=rows.map(function(row){
         const name=row[0], price=row[1]||"Não consultado", url=row[2], store=row[3];
