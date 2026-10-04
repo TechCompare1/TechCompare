@@ -1,0 +1,27 @@
+name: Update TechCompare catalog
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 10 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Update catalog
+        run: python3 scripts/update_catalog.py
+
+      - name: Commit catalog
+        run: |
+          git config user.name "TechCompare Bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/products.json
+          git diff --cached --quiet || git commit -m "chore: update product catalog"
+          git push
