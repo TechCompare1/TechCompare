@@ -31,3 +31,13 @@
 .product-img img{width:100%;height:250px;object-fit:contain;display:block;background:#fff}
 .product-placeholder{font-size:72px;display:grid;place-items:center;width:100%;height:250px}
 .price-note{display:block;margin-top:7px;color:#8a8796;font-size:11px;line-height:1.35}
+
+
+.store-price-table{margin:24px 0;border:1px solid #e9e7f5;border-radius:16px;overflow:hidden;background:#fff}
+.store-price-table h3{margin:0;padding:16px 18px;background:#f8f7fc;font-size:18px}
+.store-price-row{display:grid;grid-template-columns:1fr 1fr auto;align-items:center;gap:14px;padding:15px 18px;border-top:1px solid #eee}
+.store-price-row strong{font-size:15px}
+.store-price-row span{font-weight:700}
+.store-price-buy{border:0;border-radius:10px;padding:9px 14px;background:#7057ff;color:#fff;font-weight:700;cursor:pointer}
+.unavailable{font-size:12px!important;color:#999!important;font-weight:500!important}
+@media(max-width:650px){.store-price-row{grid-template-columns:1fr auto}.store-price-row span:nth-child(2){text-align:right}.store-price-buy{grid-column:1/-1;width:100%}}
