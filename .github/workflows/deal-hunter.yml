@@ -1,0 +1,27 @@
+name: TechCompare Deal Hunter
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 */6 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  hunt:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Find deals and generate posts
+        run: python3 scripts/generate_deals.py
+
+      - name: Commit deals and posts
+        run: |
+          git config user.name "TechCompare Bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/deals.json data/deal_history.json posts/
+          git diff --cached --quiet || git commit -m "chore: refresh deals and social posts"
+          git push
