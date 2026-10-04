@@ -81,17 +81,70 @@ def main():
     date = datetime.now().strftime("%d/%m/%Y")
     index = []
     for i, d in enumerate(deals[:10],1):
-        post = f"""# 🔥 Oferta TechCompare — {d['title']}
+        post = f"""# 🔥 OFERTA TECHCOMPARE — {d['title']}
+
+💰 **POR APENAS {d['priceFormatted']}**
+📉 **{d['discountVsSearch']}% abaixo da mediana encontrada**
+
+🚨 Oferta encontrada pelo TechCompare!
+Se você estava procurando esse produto, vale conferir o preço agora porque promoção e estoque podem acabar.
+
+🛒 **LINK PARA COMPRAR:**
+{d['affiliateUrl']}
+
+⚠️ O preço pode mudar a qualquer momento. Confira o valor final na loja antes de comprar.
+
+#ofertas #ofertadodia #tecnologia #promocao #achadinhos #TechCompare
+
+---
+
+## 📱 LEGENDA PARA INSTAGRAM
+
+🔥 **OFERTA DO DIA!**
+
+{d['title']}
 
 💰 **{d['priceFormatted']}**
+📉 **{d['discountVsSearch']}% abaixo da mediana encontrada**
 
-📉 Cerca de **{d['discountVsSearch']}% abaixo da mediana encontrada** para produtos semelhantes.
+🛒 Compre aqui:
+{d['affiliateUrl']}
 
-🛒 **Comprar:** {d['affiliateUrl']}
+⚠️ Confira o preço e estoque antes de comprar.
 
-⚠️ Preço e estoque podem mudar a qualquer momento. Confira o valor na loja antes de comprar.
+#ofertas #tecnologia #achadinhos #promocao #TechCompare
 
-#oferta #tecnologia #promocao #TechCompare
+---
+
+## 🎬 TEXTO PARA TIKTOK / REELS
+
+🚨 OLHA ESSA OFERTA!
+
+{d['title']}
+
+💰 Está por **{d['priceFormatted']}**
+🔥 Cerca de **{d['discountVsSearch']}% abaixo** dos resultados semelhantes encontrados!
+
+Se estiver precisando, corre para conferir antes que o preço mude.
+
+🔗 **Link na bio / descrição**
+
+#ofertas #tecnologia #achadinhos #promocao #TechTok #TechCompare
+
+---
+
+## 🟢 TEXTO CURTO PARA WHATSAPP / TELEGRAM
+
+🔥 **OFERTA ENCONTRADA!**
+
+{d['title']}
+💰 **{d['priceFormatted']}**
+📉 **-{d['discountVsSearch']}%**
+
+🛒 Comprar:
+{d['affiliateUrl']}
+
+⚠️ Preço pode mudar.
 """
         filename = POSTS / f"{date.replace('/','-')}-{i:02d}-{slug(d['id'])}.md"
         filename.write_text(post,encoding="utf-8")
