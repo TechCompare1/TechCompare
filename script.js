@@ -1,7 +1,7 @@
 const products = [
-  {id:"ps5slim",cat:"Consoles",icon:"🎮",name:"PlayStation®5 Slim Digital 825GB – Pacote ASTRO BOT e Gran Turismo 7",price:"R$ 4.369,00",old:"R$ 4.599,00",store:"Mercado Livre",discount:"-5%",image:"https://horizonplay.fbitsstatic.net/img/p/sony-console-playstation-5-digital-slim-825gb-astrobot-e-gran-turismo-7-cfi-2115-branco-233951/430748.jpg?h=670&v=202608250244&w=670",priceNote:"Preço de referência consultado hoje. Pode mudar na loja.",affiliateUrl:"https://amzn.to/4yydDdW",mercadoLivreUrl:"https://meli.la/1Tw6LEQ",magaluUrl:"https://www.magazinevoce.com.br/magazinetechcompare/console-playstation-5-edicao-digital-825gb-astro-bot-4-e-gran-turismo-7-sony/p/ac70gdd6je/ga/gap5/?seller_id=oficialamericanas"},
-  {id:"ryzen5500",cat:"Processadores",icon:"⚙️",name:"Processador AMD Ryzen 5 5500 100100000457BOX, Cerâmica Cinza",price:"R$ 539,99",old:"R$ 1.176,46",store:"Pichau",discount:"-54%",image:"https://media.pichau.com.br/media/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/1/0/100-100000457box1.jpg",priceNote:"Preço de referência consultado hoje. Pode mudar na loja.",affiliateUrl:"https://amzn.to/4yARBqU",mercadoLivreUrl:"https://meli.la/19ZA9DC",magaluUrl:"https://www.magazinevoce.com.br/magazinetechcompare/processador-amd-ryzen-5-5500-3-6ghz-4-2ghz-max-turbo-socket-am4-cache-19mb-ddr4-sem-video-integrado-100-100000457box/p/bhhf5c0758/in/prsd/?seller_id=kometa"},
-  {id:"galaxya17",cat:"Celulares",icon:"📱",name:'Celular Samsung Galaxy A17, 128GB, 4GB, 50MP, Tela 6.7", IP54 - Preto',price:"R$ 1.071,00",old:"R$ 1.999,00",store:"Mercado Livre",discount:"-46%",image:"https://samsungbrshop.vtexassets.com/arquivos/ids/266142-800-auto?v=638926099724000000",priceNote:"Preço de referência consultado hoje. Pode mudar na loja.",affiliateUrl:"https://amzn.to/4hLEV9r",mercadoLivreUrl:"https://meli.la/1EWbDLP",magaluUrl:"https://www.magazinevoce.com.br/magazinetechcompare/smartphone-samsung-galaxy-a17-128gb-4gb-ram-preto/p/cd4575cad1/te/ga17/?seller_id=temdetudo1001"},
+  {id:"ps5slim",cat:"Consoles",icon:"🎮",name:"PlayStation®5 Slim Digital 825GB – Pacote ASTRO BOT e Gran Turismo 7",price:"R$ 4.369,00",old:"R$ 4.599,00",store:"Mercado Livre",discount:"-5%",image:"https://horizonplay.fbitsstatic.net/img/p/sony-console-playstation-5-digital-slim-825gb-astrobot-e-gran-turismo-7-cfi-2115-branco-233951/430748.jpg?h=670&v=202608250244&w=670",priceNote:"Preços de referência consultados hoje. Podem mudar na loja.",storePrices:{amazon:"R$ 4.599,90",mercadolivre:"R$ 4.369,00",magalu:"R$ 4.599,99"},affiliateUrl:"https://amzn.to/4yydDdW",mercadoLivreUrl:"https://meli.la/1Tw6LEQ",magaluUrl:"https://www.magazinevoce.com.br/magazinetechcompare/console-playstation-5-edicao-digital-825gb-astro-bot-4-e-gran-turismo-7-sony/p/ac70gdd6je/ga/gap5/?seller_id=oficialamericanas"},
+  {id:"ryzen5500",cat:"Processadores",icon:"⚙️",name:"Processador AMD Ryzen 5 5500 100100000457BOX, Cerâmica Cinza",price:"R$ 539,99",old:"R$ 1.176,46",store:"Pichau",discount:"-54%",image:"https://media.pichau.com.br/media/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/1/0/100-100000457box1.jpg",priceNote:"Preços de referência consultados hoje. Podem mudar na loja.",storePrices:{amazon:"Não consultado",mercadolivre:"R$ 699,90",magalu:"R$ 610,15 no Pix"},affiliateUrl:"https://amzn.to/4yARBqU",mercadoLivreUrl:"https://meli.la/19ZA9DC",magaluUrl:"https://www.magazinevoce.com.br/magazinetechcompare/processador-amd-ryzen-5-5500-3-6ghz-4-2ghz-max-turbo-socket-am4-cache-19mb-ddr4-sem-video-integrado-100-100000457box/p/bhhf5c0758/in/prsd/?seller_id=kometa"},
+  {id:"galaxya17",cat:"Celulares",icon:"📱",name:'Celular Samsung Galaxy A17, 128GB, 4GB, 50MP, Tela 6.7", IP54 - Preto',price:"R$ 1.071,00",old:"R$ 1.999,00",store:"Mercado Livre",discount:"-46%",image:"https://samsungbrshop.vtexassets.com/arquivos/ids/266142-800-auto?v=638926099724000000",priceNote:"Preços de referência consultados hoje. Podem mudar na loja.",storePrices:{amazon:"Não consultado",mercadolivre:"R$ 1.071,00",magalu:"R$ 899,00 no Pix"},affiliateUrl:"https://amzn.to/4hLEV9r",mercadoLivreUrl:"https://meli.la/1EWbDLP",magaluUrl:"https://www.magazinevoce.com.br/magazinetechcompare/smartphone-samsung-galaxy-a17-128gb-4gb-ram-preto/p/cd4575cad1/te/ga17/?seller_id=temdetudo1001"},
   {id:"s24u",cat:"Celulares",icon:"📱",name:"Samsung Galaxy S24 Ultra 256GB",price:"R$ 5.299,00",old:"R$ 6.499,00",store:"Oferta a configurar",discount:"-18%",affiliateUrl:""},
   {id:"aspire5",cat:"Notebooks",icon:"💻",name:"Acer Aspire 5 Ryzen 5 | 8GB | 512GB SSD",price:"R$ 2.199,00",old:"R$ 2.699,00",store:"Oferta a configurar",discount:"-18%",affiliateUrl:""},
   {id:"rtx4060",cat:"Placas de Vídeo",icon:"🎮",name:"RTX 4060 8GB GDDR6",price:"R$ 2.299,00",old:"R$ 2.599,00",store:"Oferta a configurar",discount:"-12%",affiliateUrl:""},
@@ -27,7 +27,28 @@ function storeButtons(p){
 }
 
 
-function showProductDetails(id){const p=products.find(function(x){return x.id===id;}),d=productDetails[id];if(!p||!d){toast("Informações detalhadas ainda não cadastradas.");return;}document.getElementById("detailsContent").innerHTML='<div class="details-top"><span class="details-icon">'+p.icon+'</span><div><span class="eyebrow">'+p.cat+'</span><h2>'+d.title+'</h2><p class="price">'+p.price+'</p></div></div><ul>'+d.details.map(function(x){return '<li>'+x+'</li>';}).join("")+'</ul><div class="store-actions">'+storeButtons(p)+'</div>';document.getElementById("detailsPanel").hidden=false;document.getElementById("detailsPanel").scrollIntoView({behavior:"smooth"});}
+function showProductDetails(id){
+  const p=products.find(function(x){return x.id===id;}),d=productDetails[id];
+  if(!p||!d){toast("Informações detalhadas ainda não cadastradas.");return;}
+  const sp=p.storePrices||{};
+  const storeRows=[
+    ["Amazon",sp.amazon,p.affiliateUrl,"amazon"],
+    ["Mercado Livre",sp.mercadolivre,p.mercadoLivreUrl,"mercadolivre"],
+    ["Magalu",sp.magalu,p.magaluUrl,"magalu"]
+  ];
+  const priceTable=storeRows.map(function(row){
+    const name=row[0],price=row[1]||"Não consultado",url=row[2],store=row[3];
+    return '<div class="store-price-row"><strong>'+name+'</strong><span>'+price+'</span>'+(url?'<button class="store-price-buy" onclick="buyProduct(\\''+p.id+'\\',\\''+store+'\\')">Comprar</button>':'<span class="unavailable">Link não configurado</span>')+'</div>';
+  }).join("");
+  document.getElementById("detailsContent").innerHTML=
+    '<div class="details-top"><span class="details-icon">'+p.icon+'</span><div><span class="eyebrow">'+p.cat+'</span><h2>'+d.title+'</h2><p class="price">A partir de '+p.price+'</p></div></div>'+
+    '<div class="store-price-table"><h3>Preços por loja</h3>'+priceTable+'</div>'+
+    '<p class="price-note">Os valores são referências e podem mudar conforme promoção, estoque, forma de pagamento e região.</p>'+
+    '<ul>'+d.details.map(function(x){return '<li>'+x+'</li>';}).join("")+'</ul>'+
+    '<div class="store-actions">'+storeButtons(p)+'</div>';
+  document.getElementById("detailsPanel").hidden=false;
+  document.getElementById("detailsPanel").scrollIntoView({behavior:"smooth"});
+}
 function closeDetails(){document.getElementById("detailsPanel").hidden=true;}
 
 function render(items=products){
