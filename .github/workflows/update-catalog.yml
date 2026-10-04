@@ -23,6 +23,9 @@ jobs:
           AMAZON_ASSOCIATE_TAG: ${{ secrets.AMAZON_ASSOCIATE_TAG }}
         run: python3 scripts/amazon_creators_api.py
 
+      - name: Update Magalu prices
+        run: python3 scripts/magalu_prices.py
+
       - name: Update catalog
         run: python3 scripts/update_catalog.py
 
