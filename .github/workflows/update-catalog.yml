@@ -15,6 +15,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Try Amazon Creators API
+        env:
+          AMAZON_CREATORS_API_URL: ${{ secrets.AMAZON_CREATORS_API_URL }}
+          AMAZON_CREATORS_ACCESS_KEY: ${{ secrets.AMAZON_CREATORS_ACCESS_KEY }}
+          AMAZON_CREATORS_SECRET_KEY: ${{ secrets.AMAZON_CREATORS_SECRET_KEY }}
+          AMAZON_ASSOCIATE_TAG: ${{ secrets.AMAZON_ASSOCIATE_TAG }}
+        run: python3 scripts/amazon_creators_api.py
+
       - name: Update catalog
         run: python3 scripts/update_catalog.py
 
@@ -22,6 +30,6 @@ jobs:
         run: |
           git config user.name "TechCompare Bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/products.json
+          git add data/products.json data/amazon_prices.json
           git diff --cached --quiet || git commit -m "chore: update product catalog"
           git push
