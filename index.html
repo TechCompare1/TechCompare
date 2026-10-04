@@ -17,6 +17,7 @@
       <nav>
         <a href="#inicio">Início</a>
         <a href="#categorias">Categorias</a>
+        <a href="#pesquisar">Pesquisar</a>
         <a href="#ofertas">Ofertas</a>
         <a href="#comparar">Comparar</a>
         <a href="#blog">Blog</a>
@@ -64,7 +65,9 @@
           <a href="#ofertas">Ver todas →</a>
         </div>
         <div class="categories">
+          <button class="category" data-cat="Consoles" onclick="filterCategory(this.dataset.cat)">🎮<b>Consoles</b><small>Produtos</small></button>
           <button class="category" data-cat="Celulares" onclick="filterCategory(this.dataset.cat)">📱<b>Celulares</b><small>248 produtos</small></button>
+          <button class="category" data-cat="Processadores" onclick="filterCategory(this.dataset.cat)">⚙️<b>Processadores</b><small>Produtos</small></button>
           <button class="category" data-cat="Notebooks" onclick="filterCategory(this.dataset.cat)">💻<b>Notebooks</b><small>186 produtos</small></button>
           <button class="category" data-cat="PCs Gamer" onclick="filterCategory(this.dataset.cat)">🖥️<b>PCs Gamer</b><small>94 produtos</small></button>
           <button class="category" data-cat="Placas de Vídeo" onclick="filterCategory(this.dataset.cat)">🎮<b>Placas de Vídeo</b><small>72 produtos</small></button>
@@ -72,6 +75,19 @@
           <button class="category" data-cat="Fones" onclick="filterCategory(this.dataset.cat)">🎧<b>Fones</b><small>205 produtos</small></button>
           <button class="category" data-cat="Periféricos" onclick="filterCategory(this.dataset.cat)">⌨️<b>Periféricos</b><small>167 produtos</small></button>
           <button class="category" data-cat="Ofertas" onclick="filterCategory(this.dataset.cat)">🔥<b>Ofertas do dia</b><small>53 ofertas</small></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section search-section" id="pesquisar">
+      <div class="container">
+        <div class="section-head">
+          <div><span class="eyebrow">PESQUISAR</span><h2>Pesquise um produto</h2><p>Encontre produtos cadastrados no TechCompare sem precisar entrar na área de comparação.</p></div>
+        </div>
+        <div class="search search-large">
+          <span>⌕</span>
+          <input id="catalogSearch" type="search" placeholder="Ex.: PS5, Ryzen 5 5500, Galaxy A17">
+          <button onclick="document.getElementById('heroSearch').value=document.getElementById('catalogSearch').value;searchProducts()">Pesquisar</button>
         </div>
       </div>
     </section>
@@ -125,6 +141,15 @@
     </div>
     <div class="copyright">© 2026 TechCompare. Todos os direitos reservados.</div>
   </footer>
+
+  <section class="section details-section" id="detailsPanel" hidden>
+    <div class="container">
+      <div class="details-box">
+        <button class="close-details" onclick="closeDetails()">✕</button>
+        <div id="detailsContent"></div>
+      </div>
+    </div>
+  </section>
 
   <div id="toast" class="toast"></div>
   <script src="script.js"></script>
