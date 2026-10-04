@@ -1,4 +1,5 @@
 name: Update TechCompare catalog
+# Automatic refresh on every main push + daily schedule
 
 on:
   push:
