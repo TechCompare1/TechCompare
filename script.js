@@ -10,6 +10,8 @@ const products = [
 ];
 
 const list=document.getElementById("products");
+const productDetails={ps5slim:{title:"PlayStation®5 Slim Digital 825GB – ASTRO BOT + Gran Turismo 7",details:["Categoria: Console","SSD: 825GB","CPU: AMD Ryzen Zen 2, 8 núcleos / 16 threads, até 3,5 GHz","GPU: AMD Radeon RDNA 2 com Ray Tracing, até 10,3 TFLOPS","Memória: 16GB GDDR6","Vídeo: até 4K/120Hz, 8K e VRR via HDMI 2.1","Wi‑Fi 6, Bluetooth 5.1 e Ethernet","Áudio Tempest 3D AudioTech","Controle DualSense com resposta tátil e gatilhos adaptáveis","Edição digital sem leitor de discos; leitor adicional vendido separadamente","Inclui ASTRO BOT e Gran Turismo 7"]},ryzen5500:{title:"AMD Ryzen 5 5500",details:["Categoria: Processador","Soquete: AM4","Arquitetura: Zen 3","6 núcleos / 12 threads","Clock base: 3,6 GHz","Boost: até 4,2 GHz","Cache: 19 MB","TDP: 65W","Memória: DDR4","Não possui vídeo integrado; requer placa de vídeo dedicada"]},galaxya17:{title:"Samsung Galaxy A17 128GB 4GB RAM",details:["Categoria: Celular","Armazenamento: 128GB","RAM: 4GB","Câmera principal: 50MP","Tela: 6,7 polegadas","Proteção: IP54","Cor: Preto","Algumas especificações podem variar conforme a versão/região; confirme na oferta antes da compra."]}};
+
 let selected=new Set();
 
 function normalize(text){
@@ -23,6 +25,10 @@ function storeButtons(p){
   if(p.magaluUrl) buttons.push('<button class="store-btn magalu" onclick="buyProduct(\''+p.id+'\',\'magalu\')">Magalu</button>');
   return buttons.length ? '<div class="store-actions">'+buttons.join("")+'</div>' : '<button class="primary buy" onclick="buyProduct(\''+p.id+'\')">Ver oferta →</button>';
 }
+
+
+function showProductDetails(id){const p=products.find(function(x){return x.id===id;}),d=productDetails[id];if(!p||!d){toast("Informações detalhadas ainda não cadastradas.");return;}document.getElementById("detailsContent").innerHTML='<div class="details-top"><span class="details-icon">'+p.icon+'</span><div><span class="eyebrow">'+p.cat+'</span><h2>'+d.title+'</h2><p class="price">'+p.price+'</p></div></div><ul>'+d.details.map(function(x){return '<li>'+x+'</li>';}).join("")+'</ul><div class="store-actions">'+storeButtons(p)+'</div>';document.getElementById("detailsPanel").hidden=false;document.getElementById("detailsPanel").scrollIntoView({behavior:"smooth"});}
+function closeDetails(){document.getElementById("detailsPanel").hidden=true;}
 
 function render(items=products){
   if(!items.length){
@@ -40,7 +46,7 @@ function render(items=products){
         <small>${p.cat}</small><h3>${p.name}</h3>
         <div><span class="price">${p.price}</span><span class="old">${p.old}</span></div>
         <div class="store">${p.store}</div>
-        ${storeButtons(p)}
+        <button class="details-btn" onclick="showProductDetails('${p.id}')">Ver informações →</button>${storeButtons(p)}
       </div>
     </article>`).join("");
   updateCompareCount();
