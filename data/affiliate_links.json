@@ -16,7 +16,7 @@
     "category": "Consoles",
     "icon": "🎮",
     "affiliate": {
-      "mercadolivre": "",
+      "mercadolivre": "https://meli.la/2DMZRGK",
       "amazon": "",
       "magalu": ""
     }
@@ -38,7 +38,7 @@
     "category": "Celulares",
     "icon": "📱",
     "affiliate": {
-      "mercadolivre": "",
+      "mercadolivre": "https://meli.la/1yNy33p",
       "amazon": "",
       "magalu": ""
     }
@@ -55,12 +55,12 @@
     }
   },
   {
-    "id": "ryzen75700x",
-    "query": "AMD Ryzen 7 5700X",
+    "id": "ryzen77700x",
+    "query": "AMD Ryzen 7 7700X",
     "category": "Processadores",
     "icon": "⚙️",
     "affiliate": {
-      "mercadolivre": "",
+      "mercadolivre": "https://meli.la/1wh2LQf",
       "amazon": "",
       "magalu": ""
     }
@@ -71,7 +71,7 @@
     "category": "Placas de Vídeo",
     "icon": "🖥️",
     "affiliate": {
-      "mercadolivre": "",
+      "mercadolivre": "https://meli.la/1UPQ2ks",
       "amazon": "",
       "magalu": ""
     }
@@ -82,7 +82,7 @@
     "category": "Placas de Vídeo",
     "icon": "🖥️",
     "affiliate": {
-      "mercadolivre": "",
+      "mercadolivre": "https://meli.la/1dx54Bf",
       "amazon": "",
       "magalu": ""
     }
@@ -93,7 +93,7 @@
     "category": "Monitores",
     "icon": "🖥️",
     "affiliate": {
-      "mercadolivre": "",
+      "mercadolivre": "https://meli.la/2s6joFA",
       "amazon": "",
       "magalu": ""
     }
@@ -104,7 +104,7 @@
     "category": "Armazenamento",
     "icon": "💾",
     "affiliate": {
-      "mercadolivre": "",
+      "mercadolivre": "https://meli.la/2GnabBi",
       "amazon": "",
       "magalu": ""
     }
