@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=20261004">
 </head>
 <body>
   <header class="header">
@@ -132,6 +132,16 @@
     </section>
   </main>
 
+  <section class="section comparison-section" id="comparisonPanel" hidden>
+    <div class="container">
+      <div class="details-box">
+        <button class="close-details" onclick="closeComparison()">✕</button>
+        <div class="section-head"><div><span class="eyebrow">COMPARAÇÃO</span><h2>Compare os produtos</h2></div></div>
+        <div class="comparison-grid" id="comparisonGrid"></div>
+      </div>
+    </div>
+  </section>
+
   <footer>
     <div class="container footer-grid">
       <div><a class="logo" href="#"><span>Tech</span>Compare</a><p>Compare. Escolha. Economize.</p></div>
@@ -152,6 +162,6 @@
   </section>
 
   <div id="toast" class="toast"></div>
-  <script src="script.js"></script>
+  <script src="script.js?v=20261004"></script>
 </body>
 </html>
