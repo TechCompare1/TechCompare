@@ -96,11 +96,13 @@ def main():
             "storePrices": {
                 "amazon": amazon_price,
                 "mercadolivre": ml_price,
-                "magalu": magalu_row.get("price", "Consulte a oferta")
+                "magalu": magalu_row.get("price", "Consulte a oferta"),
+                "kabum": "Consulte a oferta" if links.get("kabum") else "Não disponível"
             },
             "affiliateUrl": links.get("amazon", ""),
             "mercadoLivreUrl": links.get("mercadolivre", ""),
             "magaluUrl": links.get("magalu", ""),
+            "kabumUrl": links.get("kabum", ""),
             "amazonProductId": amazon_row.get("productId", ""),
             "sourceItemId": item.get("id"),
             "updatedAt": __import__("datetime").datetime.utcnow().isoformat() + "Z"
