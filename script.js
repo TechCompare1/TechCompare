@@ -1,4 +1,7 @@
 const products = [
+  {id:"ps5slim",cat:"Consoles",icon:"🎮",name:"PlayStation®5 Slim Digital 825GB – Pacote ASTRO BOT e Gran Turismo 7",price:"Consultar preço",old:"",store:"Amazon",discount:"",affiliateUrl:"https://amzn.to/4yydDdW"},
+  {id:"ryzen5500",cat:"Processadores",icon:"⚙️",name:"Processador AMD Ryzen 5 5500 100100000457BOX, Cerâmica Cinza",price:"Consultar preço",old:"",store:"Amazon",discount:"",affiliateUrl:"https://amzn.to/4yARBqU"},
+  {id:"galaxya17",cat:"Celulares",icon:"📱",name:"Celular Samsung Galaxy A17, 128GB, 4GB, 50MP, Tela 6.7", IP54 - Preto",price:"Consultar preço",old:"",store:"Amazon",discount:"",affiliateUrl:"https://amzn.to/4hLEV9r"},
   {id:"s24u",cat:"Celulares",icon:"📱",name:"Samsung Galaxy S24 Ultra 256GB",price:"R$ 5.299,00",old:"R$ 6.499,00",store:"Oferta a configurar",discount:"-18%",affiliateUrl:""},
   {id:"aspire5",cat:"Notebooks",icon:"💻",name:"Acer Aspire 5 Ryzen 5 | 8GB | 512GB SSD",price:"R$ 2.199,00",old:"R$ 2.699,00",store:"Oferta a configurar",discount:"-18%",affiliateUrl:""},
   {id:"rtx4060",cat:"Placas de Vídeo",icon:"🎮",name:"RTX 4060 8GB GDDR6",price:"R$ 2.299,00",old:"R$ 2.599,00",store:"Oferta a configurar",discount:"-12%",affiliateUrl:""},
