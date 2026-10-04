@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Compare produtos de tecnologia, encontre as melhores ofertas e compre com mais segurança.">
+  <title>TechCompare — Compare. Escolha. Economize.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a class="logo" href="#"><span>Tech</span>Compare</a>
+      <nav>
+        <a href="#inicio">Início</a>
+        <a href="#categorias">Categorias</a>
+        <a href="#ofertas">Ofertas</a>
+        <a href="#comparar">Comparar</a>
+        <a href="#blog">Blog</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" aria-label="Favoritos">♡</button>
+        <button class="icon-btn" aria-label="Perfil">◯</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="badge">⚡ Ofertas atualizadas</div>
+          <h1>Compare tecnologia.<br><span>Compre melhor.</span></h1>
+          <p>Compare especificações, preços e avaliações para encontrar o produto ideal pelo melhor custo-benefício.</p>
+          <div class="search">
+            <span>⌕</span>
+            <input id="heroSearch" type="search" placeholder="O que você está procurando?">
+            <button onclick="searchProducts()">Buscar</button>
+          </div>
+          <div class="benefits">
+            <div><b>✓</b><span>Comparações simples</span></div>
+            <div><b>✓</b><span>Melhores ofertas</span></div>
+            <div><b>✓</b><span>Compra segura</span></div>
+          </div>
+        </div>
+        <div class="hero-art" aria-label="Produtos de tecnologia">
+          <div class="glow"></div>
+          <div class="device phone">📱</div>
+          <div class="device laptop">💻</div>
+          <div class="device gpu">▰</div>
+          <div class="device headphones">🎧</div>
+          <div class="device keyboard">⌨</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="categorias">
+      <div class="container">
+        <div class="section-head">
+          <div><span class="eyebrow">EXPLORE</span><h2>Encontre por categoria</h2></div>
+          <a href="#ofertas">Ver todas →</a>
+        </div>
+        <div class="categories">
+          <button class="category" data-cat="Celulares" onclick="filterCategory(this.dataset.cat)">📱<b>Celulares</b><small>248 produtos</small></button>
+          <button class="category" data-cat="Notebooks" onclick="filterCategory(this.dataset.cat)">💻<b>Notebooks</b><small>186 produtos</small></button>
+          <button class="category" data-cat="PCs Gamer" onclick="filterCategory(this.dataset.cat)">🖥️<b>PCs Gamer</b><small>94 produtos</small></button>
+          <button class="category" data-cat="Placas de Vídeo" onclick="filterCategory(this.dataset.cat)">🎮<b>Placas de Vídeo</b><small>72 produtos</small></button>
+          <button class="category" data-cat="Monitores" onclick="filterCategory(this.dataset.cat)">🖥️<b>Monitores</b><small>121 produtos</small></button>
+          <button class="category" data-cat="Fones" onclick="filterCategory(this.dataset.cat)">🎧<b>Fones</b><small>205 produtos</small></button>
+          <button class="category" data-cat="Periféricos" onclick="filterCategory(this.dataset.cat)">⌨️<b>Periféricos</b><small>167 produtos</small></button>
+          <button class="category" data-cat="Ofertas" onclick="filterCategory(this.dataset.cat)">🔥<b>Ofertas do dia</b><small>53 ofertas</small></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section offers" id="ofertas">
+      <div class="container">
+        <div class="section-head">
+          <div><span class="eyebrow">DESTAQUES</span><h2>Ofertas em destaque</h2></div>
+          <span id="filterLabel" class="filter-label">Todos</span>
+        </div>
+        <div class="products" id="products"></div>
+      </div>
+    </section>
+
+    <section class="compare-section" id="comparar">
+      <div class="container compare-box">
+        <div>
+          <span class="eyebrow">COMPARE</span>
+          <h2>Na dúvida entre dois produtos?</h2>
+          <p>Selecione produtos e compare preço, desempenho, memória, tela e avaliações lado a lado.</p>
+        </div>
+        <button class="primary" onclick="showCompare()">Começar comparação →</button>
+      </div>
+    </section>
+
+    <section class="section blog" id="blog">
+      <div class="container">
+        <div class="section-head"><div><span class="eyebrow">GUIAS</span><h2>Conteúdo para comprar melhor</h2></div></div>
+        <div class="articles">
+          <article><span>📱</span><h3>Melhores celulares até R$ 1.500</h3><p>Veja o que realmente importa antes de escolher.</p><a href="#">Ler guia →</a></article>
+          <article><span>💻</span><h3>Notebook para estudar: o que procurar?</h3><p>Processador, RAM, SSD e tela sem complicação.</p><a href="#">Ler guia →</a></article>
+          <article><span>🎮</span><h3>Qual placa de vídeo vale mais a pena?</h3><p>Entenda custo-benefício para jogar em Full HD.</p><a href="#">Ler guia →</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <div class="container newsletter-inner">
+        <div><span class="eyebrow">NOVIDADES</span><h2>As melhores ofertas direto no seu e-mail.</h2><p>Sem spam. Só oportunidades que valem a pena.</p></div>
+        <form onsubmit="subscribe(event)"><input id="email" type="email" placeholder="Seu melhor e-mail" required><button class="primary">Quero receber</button></form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div><a class="logo" href="#"><span>Tech</span>Compare</a><p>Compare. Escolha. Economize.</p></div>
+      <div><b>Site</b><a href="#categorias">Categorias</a><a href="#ofertas">Ofertas</a><a href="#comparar">Comparar</a></div>
+      <div><b>Conteúdo</b><a href="#blog">Blog</a><a href="#">Guias de compra</a><a href="#">Sobre nós</a></div>
+      <div><b>Transparência</b><p class="small">Este site poderá conter links de afiliados. Podemos receber uma comissão por compras realizadas através deles, sem custo adicional para você.</p></div>
+    </div>
+    <div class="copyright">© 2026 TechCompare. Todos os direitos reservados.</div>
+  </footer>
+
+  <div id="toast" class="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
