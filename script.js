@@ -1,4 +1,6 @@
 const products = [
+  // Links e preços abaixo são campos de catálogo; preencher com dados reais após conectar os programas de afiliados.
+
   {cat:"Celulares", icon:"📱", name:"Samsung Galaxy S24 Ultra 256GB", price:"R$ 5.299,00", old:"R$ 6.499,00", store:"Ver oferta na loja", discount:"-18%"},
   {cat:"Notebooks", icon:"💻", name:"Acer Aspire 5 Ryzen 5 | 8GB | 512GB SSD", price:"R$ 2.199,00", old:"R$ 2.699,00", store:"Ver oferta na loja", discount:"-18%"},
   {cat:"Placas de Vídeo", icon:"🎮", name:"RTX 4060 8GB GDDR6", price:"R$ 2.299,00", old:"R$ 2.599,00", store:"Ver oferta na loja", discount:"-12%"},
@@ -34,7 +36,6 @@ function searchProducts(){
   document.getElementById("ofertas").scrollIntoView({behavior:"smooth"});
   if(!found.length) toast("Ainda não temos esse produto na demonstração.");
 }
-function showCompare(){toast("A área de comparação está pronta para receber produtos e preços reais.");}
 function subscribe(e){e.preventDefault();toast("Cadastro realizado! (Demonstração)");e.target.reset();}
 function toast(msg){const t=document.getElementById("toast");t.textContent=msg;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2800)}
 render();
