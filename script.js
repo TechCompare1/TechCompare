@@ -129,7 +129,7 @@ function showCompare(){openComparison();}
 function closeComparison(){document.getElementById("comparisonPanel").hidden=true;}
 function buyProduct(id,store="amazon"){
   const p=products.find(x=>x.id===id);
-  const url=store==="mercadolivre"?p.mercadoLivreUrl:store==="magalu"?p.magaluUrl:p.affiliateUrl;
+  const url=store==="mercadolivre"?p.mercadoLivreUrl:store==="magalu"?p.magaluUrl:store==="kabum"?p.kabumUrl:p.affiliateUrl;
   if(url) window.open(url,"_blank","noopener");
   else toast("Link de afiliado ainda não configurado para este produto.");
 }
