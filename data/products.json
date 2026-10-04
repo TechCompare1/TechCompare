@@ -22,7 +22,7 @@
     "kabumUrl": "https://www.kabum.com.br/produto/989702/console-sony-playstation-5-ssd-825gb-controle-sem-fio-dualsense-2-jogos-digitais-edicao-digital",
     "amazonProductId": "",
     "sourceItemId": null,
-    "updatedAt": "2026-10-04T23:01:30.148580Z"
+    "updatedAt": "2026-10-04T23:05:45.770074Z"
   },
   {
     "id": "ps5slimdisc",
@@ -47,7 +47,7 @@
     "kabumUrl": "https://www.kabum.com.br/produto/902616/console-playstation-5-slim-disc-2-jogos-1-contro-so000152ps5-branco-preto-bivolt",
     "amazonProductId": "",
     "sourceItemId": null,
-    "updatedAt": "2026-10-04T23:01:30.251048Z"
+    "updatedAt": "2026-10-04T23:05:45.943042Z"
   },
   {
     "id": "galaxya17",
@@ -72,7 +72,7 @@
     "kabumUrl": "",
     "amazonProductId": "",
     "sourceItemId": null,
-    "updatedAt": "2026-10-04T23:01:30.392768Z"
+    "updatedAt": "2026-10-04T23:05:46.062373Z"
   },
   {
     "id": "galaxya56",
@@ -97,7 +97,7 @@
     "kabumUrl": "",
     "amazonProductId": "",
     "sourceItemId": null,
-    "updatedAt": "2026-10-04T23:01:30.512257Z"
+    "updatedAt": "2026-10-04T23:05:46.215596Z"
   },
   {
     "id": "ryzen5500",
@@ -122,7 +122,7 @@
     "kabumUrl": "https://www.kabum.com.br/produto/320799/processador-amd-ryzen-5-5500-3-6ghz-4-2ghz-max-turbo-cache-19mb-6-nucleos-12-threads-am4-sem-video-integrado-100-100000457box",
     "amazonProductId": "",
     "sourceItemId": null,
-    "updatedAt": "2026-10-04T23:01:30.589327Z"
+    "updatedAt": "2026-10-04T23:05:46.333372Z"
   },
   {
     "id": "ryzen77700x",
@@ -147,7 +147,7 @@
     "kabumUrl": "https://www.kabum.com.br/produto/378413/processador-amd-ryzen-7-7700x-4-5ghz-5-4ghz-max-turbo-cache-40mb-8-nucleos-16-threads-am5-com-video-integrado-100-100000591wof",
     "amazonProductId": "",
     "sourceItemId": null,
-    "updatedAt": "2026-10-04T23:01:30.835639Z"
+    "updatedAt": "2026-10-04T23:05:46.428221Z"
   },
   {
     "id": "rtx4060",
@@ -172,7 +172,7 @@
     "kabumUrl": "",
     "amazonProductId": "",
     "sourceItemId": null,
-    "updatedAt": "2026-10-04T23:01:31.043823Z"
+    "updatedAt": "2026-10-04T23:05:46.526790Z"
   },
   {
     "id": "rtx5060",
@@ -197,7 +197,7 @@
     "kabumUrl": "",
     "amazonProductId": "",
     "sourceItemId": null,
-    "updatedAt": "2026-10-04T23:01:31.147454Z"
+    "updatedAt": "2026-10-04T23:05:46.682430Z"
   },
   {
     "id": "aoc24g4p",
@@ -222,7 +222,7 @@
     "kabumUrl": "",
     "amazonProductId": "",
     "sourceItemId": null,
-    "updatedAt": "2026-10-04T23:01:31.211288Z"
+    "updatedAt": "2026-10-04T23:05:46.798594Z"
   },
   {
     "id": "kingstonnv2",
@@ -247,6 +247,6 @@
     "kabumUrl": "",
     "amazonProductId": "",
     "sourceItemId": null,
-    "updatedAt": "2026-10-04T23:01:31.285037Z"
+    "updatedAt": "2026-10-04T23:05:46.894822Z"
   }
 ]
