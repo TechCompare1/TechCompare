@@ -1,6 +1,8 @@
 name: Update TechCompare catalog
 
 on:
+  push:
+    branches: ["main"]
   workflow_dispatch:
   schedule:
     - cron: "17 10 * * *"
@@ -10,6 +12,7 @@ permissions:
 
 jobs:
   update:
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
