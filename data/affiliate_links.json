@@ -1,0 +1,35 @@
+[
+  {
+    "id": "ps5slim",
+    "query": "PlayStation 5 Slim Digital 825GB Astro Bot Gran Turismo 7",
+    "category": "Consoles",
+    "icon": "🎮",
+    "affiliate": {
+      "mercadolivre": "https://meli.la/1Tw6LEQ",
+      "amazon": "https://amzn.to/4yydDdW",
+      "magalu": "https://www.magazinevoce.com.br/magazinetechcompare/console-playstation-5-edicao-digital-825gb-astro-bot-4-e-gran-turismo-7-sony/p/ac70gdd6je/ga/gap5/?seller_id=oficialamericanas"
+    }
+  },
+  {
+    "id": "ryzen5500",
+    "query": "AMD Ryzen 5 5500",
+    "category": "Processadores",
+    "icon": "⚙️",
+    "affiliate": {
+      "mercadolivre": "https://meli.la/19ZA9DC",
+      "amazon": "https://amzn.to/4yARBqU",
+      "magalu": "https://www.magazinevoce.com.br/magazinetechcompare/processador-amd-ryzen-5-5500-3-6ghz-4-2ghz-max-turbo-socket-am4-cache-19mb-ddr4-sem-video-integrado-100-100000457box/p/bhhf5c0758/in/prsd/?seller_id=kometa"
+    }
+  },
+  {
+    "id": "galaxya17",
+    "query": "Samsung Galaxy A17 128GB 4GB",
+    "category": "Celulares",
+    "icon": "📱",
+    "affiliate": {
+      "mercadolivre": "https://meli.la/1EWbDLP",
+      "amazon": "https://amzn.to/4hLEV9r",
+      "magalu": "https://www.magazinevoce.com.br/magazinetechcompare/smartphone-samsung-galaxy-a17-128gb-4gb-ram-preto/p/cd4575cad1/te/ga17/?seller_id=temdetudo1001"
+    }
+  }
+]
