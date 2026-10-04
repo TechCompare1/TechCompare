@@ -38,7 +38,7 @@ function showProductDetails(id){
   ];
   const priceTable=storeRows.map(function(row){
     const name=row[0],price=row[1]||"Não consultado",url=row[2],store=row[3];
-    return '<div class="store-price-row"><strong>'+name+'</strong><span>'+price+'</span>'+(url?'<button class="store-price-buy" onclick="buyProduct(\\''+p.id+'\\',\\''+store+'\\')">Comprar</button>':'<span class="unavailable">Link não configurado</span>')+'</div>';
+    return '<div class="store-price-row"><strong>'+name+'</strong><span>'+price+'</span>'+(url?'<button class="store-price-buy" onclick="buyProduct(&quot;'+p.id+'&quot;,&quot;'+store+'&quot;)">Comprar</button>':'<span class="unavailable">Link não configurado</span>')+'</div>';
   }).join("");
   document.getElementById("detailsContent").innerHTML=
     '<div class="details-top"><span class="details-icon">'+p.icon+'</span><div><span class="eyebrow">'+p.cat+'</span><h2>'+d.title+'</h2><p class="price">A partir de '+p.price+'</p></div></div>'+
