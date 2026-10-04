@@ -5,6 +5,7 @@ ROOT = Path(__file__).resolve().parents[1]
 CFG = ROOT / "data" / "affiliate_links.json"
 OUT = ROOT / "data" / "products.json"
 AMAZON_CACHE = ROOT / "data" / "amazon_prices.json"
+MAGALU_CACHE = ROOT / "data" / "magalu_prices.json"
 
 def http_json(url):
     req = urllib.request.Request(url, headers={"User-Agent": "TechCompareCatalogBot/1.0"})
@@ -38,9 +39,20 @@ def load_amazon_prices():
         print("Amazon cache could not be read:", exc)
         return {}
 
+def load_magalu_prices():
+    if not MAGALU_CACHE.exists():
+        return {}
+    try:
+        data = json.loads(MAGALU_CACHE.read_text(encoding="utf-8"))
+        return data if isinstance(data, dict) else {}
+    except Exception as exc:
+        print("Magalu cache could not be read:", exc)
+        return {}
+
 def main():
     cfg = json.loads(CFG.read_text(encoding="utf-8"))
     amazon = load_amazon_prices()
+    magalu = load_magalu_prices()
     products = []
 
     for row in cfg:
@@ -62,6 +74,7 @@ def main():
 
         links = row.get("affiliate", {})
         amazon_row = amazon.get(row["id"], {})
+        magalu_row = magalu.get(row["id"], {})
         amazon_price = amazon_row.get("price", "Não consultado")
         if not amazon_price:
             amazon_price = "Não consultado"
@@ -83,7 +96,7 @@ def main():
             "storePrices": {
                 "amazon": amazon_price,
                 "mercadolivre": ml_price,
-                "magalu": "Consulte a oferta"
+                "magalu": magalu_row.get("price", "Consulte a oferta")
             },
             "affiliateUrl": links.get("amazon", ""),
             "mercadoLivreUrl": links.get("mercadolivre", ""),
