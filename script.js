@@ -12,6 +12,10 @@ const products = [
 const list=document.getElementById("products");
 let selected=new Set();
 
+function normalize(text){
+  return String(text||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
+}
+
 function storeButtons(p){
   const buttons=[];
   if(p.affiliateUrl) buttons.push('<button class="store-btn amazon" onclick="buyProduct(\''+p.id+'\',\'amazon\')">Amazon</button>');
@@ -21,6 +25,11 @@ function storeButtons(p){
 }
 
 function render(items=products){
+  if(!items.length){
+    list.innerHTML='<div class="no-results"><h3>Nenhum produto encontrado</h3><p>Esse produto ainda não está cadastrado no TechCompare. Você pode pesquisar diretamente nas lojas abaixo.</p><div class="external-searches"><button onclick="searchStore(\'amazon\')">Pesquisar na Amazon</button><button onclick="searchStore(\'mercadolivre\')">Pesquisar no Mercado Livre</button><button onclick="searchStore(\'magalu\')">Pesquisar na Magalu</button></div></div>';
+    updateCompareCount();
+    return;
+  }
   list.innerHTML=items.map(p=>`
     <article class="product">
       <div class="product-img"><span class="discount">${p.discount}</span>
@@ -36,27 +45,49 @@ function render(items=products){
     </article>`).join("");
   updateCompareCount();
 }
+
 function filterCategory(cat){
   document.getElementById("filterLabel").textContent=cat;
   render(cat==="Ofertas"?products:products.filter(p=>p.cat===cat));
   document.getElementById("ofertas").scrollIntoView({behavior:"smooth"});
 }
+
 function searchProducts(){
-  const q=document.getElementById("heroSearch").value.toLowerCase().trim();
+  const input=document.getElementById("heroSearch");
+  const q=normalize(input.value.trim());
   if(!q){toast("Digite um produto para pesquisar.");return;}
-  const found=products.filter(p=>(p.name+" "+p.cat).toLowerCase().includes(q));
-  document.getElementById("filterLabel").textContent=q;
+  const terms=q.split(/\s+/).filter(Boolean);
+  const found=products.filter(p=>{
+    const text=normalize(p.name+" "+p.cat+" "+p.store);
+    return terms.every(term=>text.includes(term));
+  });
+  document.getElementById("filterLabel").textContent=input.value.trim();
   render(found);
   document.getElementById("ofertas").scrollIntoView({behavior:"smooth"});
-  if(!found.length)toast("Produto não encontrado no catálogo atual.");
+  if(!found.length) toast("Esse produto ainda não está no catálogo. Você pode pesquisar nas lojas.");
 }
+
+function searchStore(store){
+  const q=document.getElementById("heroSearch").value.trim();
+  if(!q){toast("Digite o nome do produto primeiro.");return;}
+  const urls={
+    amazon:"https://www.amazon.com.br/s?k="+encodeURIComponent(q),
+    mercadolivre:"https://lista.mercadolivre.com.br/"+encodeURIComponent(q),
+    magalu:"https://www.magazineluiza.com.br/busca/"+encodeURIComponent(q)
+  };
+  window.open(urls[store],"_blank","noopener");
+}
+
 function toggleCompare(id){
   if(selected.has(id)) selected.delete(id);
   else if(selected.size<3) selected.add(id);
   else {toast("Você pode comparar no máximo 3 produtos.");return;}
   render();
 }
-function updateCompareCount(){document.getElementById("compareCount").textContent=selected.size;}
+function updateCompareCount(){
+  const el=document.getElementById("compareCount");
+  if(el) el.textContent=selected.size;
+}
 function openComparison(){
   if(selected.size<2){toast("Selecione pelo menos 2 produtos.");return;}
   const items=products.filter(p=>selected.has(p.id));
@@ -67,6 +98,7 @@ function openComparison(){
   document.getElementById("comparisonPanel").hidden=false;
   document.getElementById("comparisonPanel").scrollIntoView({behavior:"smooth"});
 }
+function showCompare(){openComparison();}
 function closeComparison(){document.getElementById("comparisonPanel").hidden=true;}
 function buyProduct(id,store="amazon"){
   const p=products.find(x=>x.id===id);
