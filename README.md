@@ -18,3 +18,6 @@ Envie estes arquivos para qualquer hospedagem de site estático (por exemplo, Gi
 - Configurar SEO e analytics.
 
 Observação: os preços e produtos atuais são apenas exemplos visuais e não representam ofertas verificadas.
+
+
+<!-- GitHub Pages redeploy trigger: 2026-10-04 -->
