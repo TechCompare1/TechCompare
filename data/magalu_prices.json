@@ -1,7 +1,7 @@
 {
   "ps5slim": {
     "url": "https://www.magazinevoce.com.br/magazinetechcompare/console-playstation-5-edicao-digital-825gb-astro-bot-4-e-gran-turismo-7-sony/p/ac70gdd6je/ga/gap5/?seller_id=oficialamericanas",
-    "checkedAt": "2026-11-22T17:49:45.337106+00:00",
+    "checkedAt": "2026-11-23T22:02:49.278992+00:00",
     "price": "R$ 4.799,99",
     "numericPrice": 4799.99,
     "status": "ok",
@@ -9,51 +9,51 @@
   },
   "ps5slimdisc": {
     "url": "",
-    "checkedAt": "2026-11-22T17:49:48.115275+00:00",
+    "checkedAt": "2026-11-23T22:02:51.625429+00:00",
     "status": "missing_url"
   },
   "galaxya17": {
     "url": "https://www.magazinevoce.com.br/magazinetechcompare/smartphone-samsung-galaxy-a17-128gb-4gb-ram-preto/p/cd4575cad1/te/ga17/?seller_id=temdetudo1001",
-    "checkedAt": "2026-11-22T17:49:48.115288+00:00",
+    "checkedAt": "2026-11-23T22:02:51.625444+00:00",
     "price": "R$ 965,08",
     "numericPrice": 965.08,
     "status": "ok"
   },
   "galaxya56": {
     "url": "",
-    "checkedAt": "2026-11-22T17:49:50.541674+00:00",
+    "checkedAt": "2026-11-23T22:02:53.750526+00:00",
     "status": "missing_url"
   },
   "ryzen5500": {
     "url": "https://www.magazinevoce.com.br/magazinetechcompare/processador-amd-ryzen-5-5500-3-6ghz-4-2ghz-max-turbo-socket-am4-cache-19mb-ddr4-sem-video-integrado-100-100000457box/p/bhhf5c0758/in/prsd/?seller_id=kometa",
-    "checkedAt": "2026-11-22T17:49:50.541687+00:00",
+    "checkedAt": "2026-11-23T22:02:53.750541+00:00",
     "price": "R$ 638,07",
     "numericPrice": 638.07,
     "status": "ok"
   },
   "ryzen77700x": {
     "url": "",
-    "checkedAt": "2026-11-22T17:49:53.499816+00:00",
+    "checkedAt": "2026-11-23T22:02:56.082879+00:00",
     "status": "missing_url"
   },
   "rtx4060": {
     "url": "",
-    "checkedAt": "2026-11-22T17:49:53.499829+00:00",
+    "checkedAt": "2026-11-23T22:02:56.082895+00:00",
     "status": "missing_url"
   },
   "rtx5060": {
     "url": "",
-    "checkedAt": "2026-11-22T17:49:53.499832+00:00",
+    "checkedAt": "2026-11-23T22:02:56.082898+00:00",
     "status": "missing_url"
   },
   "aoc24g4p": {
     "url": "",
-    "checkedAt": "2026-11-22T17:49:53.499835+00:00",
+    "checkedAt": "2026-11-23T22:02:56.082901+00:00",
     "status": "missing_url"
   },
   "kingstonnv2": {
     "url": "",
-    "checkedAt": "2026-11-22T17:49:53.499837+00:00",
+    "checkedAt": "2026-11-23T22:02:56.082903+00:00",
     "status": "missing_url"
   }
 }
